@@ -6,7 +6,7 @@ const CreateTodoField = ({setTodos, todos}) => {
 
     const addTodo = (title) => {
         setTodos([{
-            id: new Date(),
+            id: Date.now(),
             title,
             isCompleted: false
         },

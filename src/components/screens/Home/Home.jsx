@@ -1,21 +1,27 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import TodoItem from "./item/TodoItem";
 import CreateTodoField from "./create-todo-field/CreateTodoField";
 
+// const tdo = [
 const todoArray = [
     {
-        id: 1,
-        title: 'Finish the essay collaboration',
+        id: 11,
+        title: 'Груши яблоки',
         isCompleted: false,
     },
     {
-        id: 2,
-        title: 'Read next chapter of the book',
+        id: 12,
+        title: 'Коврик - длина 1,5-2м, шарина 1.5-1.6м',
         isCompleted: false,
     },
     {
-        id: 3,
-        title: 'Send the finished assignment',
+        id: 13,
+        title: 'Ремень',
+        isCompleted: false,
+    },
+    {
+        id: 14,
+        title: 'Папе флешку',
         isCompleted: false,
     },
 ]
@@ -23,7 +29,15 @@ const todoArray = [
 
 const Home = () => {
 
-    const [todos, setTodos] = useState(todoArray)
+    /*localStorage.setItem('storageArray', JSON.stringify(tdo))*/ /*Скрыть это, и получится синхронизация с localStorage*/
+
+    // const todoArray = JSON.parse(localStorage.getItem('storageArray'))
+
+    const [todos, setTodos] = useState(todoArray ? todoArray : [])
+
+    // useEffect(() => {
+    //     localStorage.setItem('storageArray', JSON.stringify(todos))
+    // }, [todos])
 
     const changeTodo = (id) => {
         const copy = [...todoArray]
@@ -41,14 +55,13 @@ const Home = () => {
         )
     }
 
-
     // window.addTodo = addTodo
     return (
-        <div className="text-white w-1/2 mx-auto">
+        <div className="text-white w-full sm:w-1/2  mx-auto">
             <h1 className={`text-2xl font-bold text-center mb-10`}>ToDo</h1>
-            {todos.map((todo, index) => {
-                return <TodoItem todo={todo} key={index} index={index} changeTodo={changeTodo} removeTodo={removeTodo}/>
-            })}
+            {todoArray ? todos.map((todo, index) => {
+                return <TodoItem setTodos={setTodos} todos={todos} todo={todo} key={index} index={index} changeTodo={changeTodo} removeTodo={removeTodo}/>
+            }) : null}
             <CreateTodoField todos={todos} setTodos={setTodos}/>
         </div>
     );
