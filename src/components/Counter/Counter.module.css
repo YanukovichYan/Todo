@@ -1,9 +1,9 @@
 .wrapper {
     max-width: 350px;
-    margin: 0 auto;
     text-align: center;
     border: 1px solid #393942;
     padding: 10px;
+    margin: 10px;
     border-radius: 10px;
 }
 

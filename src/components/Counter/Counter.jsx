@@ -5,7 +5,6 @@ const Counter = () => {
 
     const [count, setCount] = useState(0)
 
-
     return (
         <div className={classes.wrapper}>
             <h2 className={classes.title}>Counter:</h2>

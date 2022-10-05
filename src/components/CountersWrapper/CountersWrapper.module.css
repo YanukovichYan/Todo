@@ -1,7 +1,13 @@
-.countersWrapper {
-    max-width: 350px;
+.container {
+    max-width: 1200px;
     margin: 0 auto;
     text-align: center;
+}
+
+.countersWrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .addCounter {
