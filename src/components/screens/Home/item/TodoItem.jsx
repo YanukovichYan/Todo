@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import Check from "./Check";
 import {BsTrash} from "react-icons/bs";
 import {VscEdit} from "react-icons/vsc";
@@ -38,10 +38,8 @@ const TodoItem = ({todo, changeTodo, removeTodo, todos, setTodos}) => {
                 <button
                     onClick={() => changeTodo(todo.id)}
                     className={`flex items-center w-full`}>
-
-
                     <Check isCompleted={todo.isCompleted}/>
-                    <div className={`${todo.isCompleted ? 'line-through' : null}`}>{todo.title}</div>
+                    <div className={`text-left ${todo.isCompleted ? 'line-through' : null}`}>{todo.title}</div>
                 </button>
                 <button onClick={(e) => valueTask(todo.title, todo.id)}>
                     <VscEdit size={22}

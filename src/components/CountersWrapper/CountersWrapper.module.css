@@ -1,0 +1,19 @@
+.countersWrapper {
+    max-width: 350px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.addCounter {
+    width: 120px;
+    padding: 11px;
+    background-color: #393942;
+    border-radius: 10px;
+    color: #FFF;
+    transition: all .5s;
+    margin-bottom: 15px;
+}
+
+.addCounter:hover {
+    background-color: #656567;
+}
