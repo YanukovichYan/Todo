@@ -12,6 +12,7 @@ const NavMenu = () => {
         <div className={classes.navMenu}>
             <button onClick={() => navigate(`/todo`)} className={`text-white hover:text-pink-400 transition-colors ease-in-out duration-300`}>ToDo</button>
             <button onClick={() => navigate(`/counter`)} className={`text-white hover:text-pink-400 transition-colors ease-in-out duration-300`}>Counter</button>
+            <button onClick={() => navigate(`/exchange`)} className={`text-white hover:text-pink-400 transition-colors ease-in-out duration-300`}>Exchange</button>
         </div>
     );
 };
